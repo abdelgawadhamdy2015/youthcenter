@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "843967352246",
+    "firebase_url": "https://cups-7a185-default-rtdb.firebaseio.com",
+    "project_id": "cups-7a185",
+    "storage_bucket": "cups-7a185.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843967352246:android:23c0f0d8c28649a057c517",
+        "android_client_info": {
+          "package_name": "com.example.newfp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843967352246-n2fvu2ajekfh3rf68j1m7iqq1l7skale.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBABR6VjYQ-8MwkrPqbXOlDk4aLxJmHh9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843967352246-n2fvu2ajekfh3rf68j1m7iqq1l7skale.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843967352246-bec1huppsp77544q0ug3s60fktafp3rr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.finwallet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
