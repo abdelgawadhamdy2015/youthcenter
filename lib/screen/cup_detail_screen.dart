@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_swipe_detector/flutter_swipe_detector.dart';
-import 'package:newfp/models/booking_model.dart';
 import 'package:newfp/models/cup_model.dart';
 import 'package:newfp/models/match_model.dart';
 import 'package:newfp/models/user_model.dart';

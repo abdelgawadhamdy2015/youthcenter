@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:newfp/models/booking_model.dart';
-import 'package:newfp/models/user_model.dart';
 
 import '../FetchData.dart';
 
@@ -13,7 +12,6 @@ class AddBooking extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return Add(centerName: center);
   }
 }
@@ -36,13 +34,14 @@ class Add extends State<AddBooking> {
   String centerName;
   @override
   void initState() {
-    // TODO: implement initState
-    print(centerName);
+    super.initState();
+    if (kDebugMode) {
+      print(centerName);
+    }
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     nameController.dispose();
     timeStartController.dispose();

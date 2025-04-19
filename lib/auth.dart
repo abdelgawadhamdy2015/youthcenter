@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:newfp/screen/login_screen.dart';
 import 'package:newfp/screen/welcome_screen.dart';
 
-class auth extends StatelessWidget {
+class Auth extends StatelessWidget {
+  const Auth({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

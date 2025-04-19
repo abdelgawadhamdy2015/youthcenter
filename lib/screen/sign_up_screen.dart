@@ -68,7 +68,7 @@ class SignUp extends State<SignUpScreen> {
                   password: passwordController.text.trim());
             })
             .whenComplete(() => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => auth())))
+                context, MaterialPageRoute(builder: (context) => Auth())))
             .catchError(
               (error) {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(

@@ -80,7 +80,7 @@ class Welcome extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
 
     }
 
-    return   HomeScreen(centerUser: centerUser, adminValue: centerUser.admin);
+    return const  HomeScreen();
 
   }
 }

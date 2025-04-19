@@ -50,11 +50,11 @@ class CenterUser {
 
   Map<String, dynamic> toFirestore() {
     return {
-      if (name != null) "name": name,
-      if (mobile != null) "mobile": mobile,
-      if (email != null) "timeEnd": email,
-      if (admin !=null) 'admin' : admin,
-      if (youthCenterName != null) "youthCenterName": youthCenterName,
+      "name": name,
+      "mobile": mobile,
+      "timeEnd": email,
+      'admin' : admin,
+      "youthCenterName": youthCenterName,
     };
   }
 }

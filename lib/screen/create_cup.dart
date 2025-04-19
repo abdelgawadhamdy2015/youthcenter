@@ -65,6 +65,7 @@ class AddCup extends State<AddCupScreen> {
   int groupStatus = 0; // 0= manual , 1= automatic
   @override
   void initState() {
+    super.initState();
     // TODO: implement initState
     for (int i = 0; i < teemsCount; i++) {
       controllers.add(TextEditingController());

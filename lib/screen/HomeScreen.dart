@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,20 +15,17 @@ import '../models/user_model.dart';
 import 'package:flutter_swipe_detector/flutter_swipe_detector.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen( {super.key, required this.centerUser,required this.adminValue});
-  final CenterUser centerUser;
-  final bool adminValue;
+  const HomeScreen({
+    super.key,
+  });
+
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return Home(centerUser: centerUser,adminValue: adminValue);
-  }
+  State<HomeScreen> createState() => Home();
 }
 
 class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
-   Home({required this.centerUser,required this.adminValue});
-   CenterUser centerUser;
-   bool adminValue ;
+  Home();
+
   FirebaseFirestore db = FirebaseFirestore.instance;
   late QuerySnapshot<Map<String, dynamic>> snapshot;
   late QuerySnapshot<Map<String, dynamic>> snapshot1;
@@ -46,17 +42,15 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
 
   late List<MatchModel> matches = [];
 
-
-
+  late CenterUser centerUser;
+  bool adminValue = true;
   @override
   void initState() {
     super.initState();
-    dropdownValue=centerUser.youthCenterName;
-    adminValue=centerUser.admin;
+    dropdownValue = centerUser.youthCenterName;
+    adminValue = centerUser.admin;
     tabController = TabController(length: 2, vsync: this);
   }
-
-
 
   List<MatchModel> getMatchesModel(List<dynamic> map) {
     for (var element in map) {
@@ -125,10 +119,12 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
     return Scaffold(
         appBar: AppBar(
           leading: //Image(image: AssetImage("images/logo.jpg"),),
-          const Icon(Icons.sports_baseball_sharp,color: Colors.purpleAccent),
-         flexibleSpace:  SizedBox(height: 10,),
-
-            bottom: TabBar(
+              const Icon(Icons.sports_baseball_sharp,
+                  color: Colors.purpleAccent),
+          flexibleSpace: SizedBox(
+            height: 10,
+          ),
+          bottom: TabBar(
               padding: EdgeInsets.all(5),
               controller: tabController,
               indicator: BoxDecoration(
@@ -151,7 +147,6 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
                 return [
                   fetchDate.buildPopupMenuItem(
                       adminValue, 0, "حسابي", Icons.account_circle_outlined),
-
                   fetchDate.buildPopupMenuItem(
                       adminValue, 1, "اضافة حجز", Icons.add),
                   fetchDate.buildPopupMenuItem(
@@ -161,7 +156,7 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
                 ];
               },
               color: Colors.white,
-              icon:Icon(Icons.menu),
+              icon: Icon(Icons.menu),
               onSelected: (value) {
                 switch (value) {
                   case 0:
@@ -181,12 +176,11 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
                     }
                     break;
                   case 2:
-
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  CupScreen(center: centerUser)));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                CupScreen(center: centerUser)));
 
                     break;
                   case 3:
@@ -204,8 +198,6 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
                 image: DecorationImage(
                     image: AssetImage("images/2f.jpg"), fit: BoxFit.fill)),
             child: TabBarView(controller: tabController, children: [
-
-
               FutureBuilder(
                 future: getBooking(),
                 builder: (context, snapshot1) {
@@ -345,9 +337,7 @@ class Home extends State<HomeScreen> with SingleTickerProviderStateMixin {
                   }
                 },
               ),
-
               MatchesOfActiveCups(center: centerUser),
-
             ]),
           ),
         ));

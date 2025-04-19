@@ -1,6 +1,5 @@
 import 'dart:core';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,7 +7,6 @@ class LoginScreen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return Login();
   }
 }
@@ -19,7 +17,6 @@ class Login extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     usernameController.dispose();
     passwordController.dispose();
@@ -30,18 +27,19 @@ class Login extends State<LoginScreen> {
         .signInWithEmailAndPassword(
             email: usernameController.text.trim(),
             password: passwordController.text.trim())
-        .catchError(((error) {
+        .catchError((error) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(error.toString()),
         backgroundColor: Colors.redAccent,
         elevation: 10, //shadow
       ));
-    }));
+      throw error; // Rethrow the error to maintain the expected type
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: const Text("Youth Center"),
@@ -110,7 +108,6 @@ class Login extends State<LoginScreen> {
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.amber,
-                          //foregroundColor: Colors.black,
                         ),
                         child: const Text("submit",
                             style: TextStyle(fontSize: 15, color: Colors.blue)),
@@ -133,7 +130,7 @@ class Login extends State<LoginScreen> {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 50),
+                  padding:const EdgeInsets.only(left: 50),
                   child: Row(
                     children: [
                       const Text(

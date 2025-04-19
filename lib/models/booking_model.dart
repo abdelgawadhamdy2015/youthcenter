@@ -40,11 +40,11 @@ class BookingModel {
 
   Map<String, dynamic> toFirestore() {
     return {
-      if (name != null) "name": name,
-      if (mobile != null) "mobile": mobile,
-      if (timeEnd != null) "timeEnd": timeEnd,
-      if (timeStart != null) "timeStart": timeStart,
-      if (youthCenterId != null) "youthCenterId": youthCenterId,
+      "name": name,
+      "mobile": mobile,
+      "timeEnd": timeEnd,
+      "timeStart": timeStart,
+      "youthCenterId": youthCenterId,
 
     };
   }

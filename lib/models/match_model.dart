@@ -68,11 +68,11 @@ class MatchModel {
 
   Map<String, dynamic> toFirestore() {
     return {
-      if (firstTeem != null) "firstTeem": firstTeem,
-      if (secondTeem != null) "secondTeem": secondTeem,
-      if (time != null) "time": time,
-      if (secondTeemScore != null) "secondTeemScore": secondTeemScore,
-      if (youthCenterId != null) "youthCenterId": youthCenterId,
+      "firstTeem": firstTeem,
+      "secondTeem": secondTeem,
+      "time": time,
+      "secondTeemScore": secondTeemScore,
+      "youthCenterId": youthCenterId,
     };
   }
 }

@@ -38,7 +38,7 @@ class CupModel {
       DocumentSnapshot<Map<String, dynamic>> document) {
     final data = document.data();
     return CupModel(
-        id: document.id!,
+        id: document.id,
         name: data!["name"],
         teems: data["teems"],
         timeStart: data["timeStart"],
@@ -52,12 +52,12 @@ class CupModel {
 
   Map<String, dynamic> toFirestore() {
     return {
-      if (name != null) "name": name,
-      if (teems != null) "teems": teems,
-      if (timeStart != null) "timeStart": timeStart,
-      if (youthCenterId != null) "youthCenterId": youthCenterId,
-      if (matches != null) "matches": matches,
-      if (finished != null) "finished": finished,
+      "name": name,
+      "teems": teems,
+      "timeStart": timeStart,
+      "youthCenterId": youthCenterId,
+      "matches": matches,
+      "finished": finished,
     };
   }
   bool getStatus() {
