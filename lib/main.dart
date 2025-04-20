@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newfp/auth.dart';
 import 'package:newfp/screen/HomeScreen.dart';
-import 'package:newfp/screen/add_booking.dart';
 import 'package:newfp/screen/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:newfp/screen/sign_up_screen.dart';
@@ -32,9 +31,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: Auth(),
+        home:const Auth(),
         routes: {
-          '/': (context) => Auth(),
+          '/': (context) =>const Auth(),
           'signupScreen': (context) => const SignUpScreen(),
           "loginScreen": (context) => const LoginScreen(),
           "homeScreen": (context) => const HomeScreen(),
